@@ -1,12 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
+using WebAppPrueba.data;
+using WebAppPrueba.Models;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
-using WebAppPrueba.Models;
-using WebAppPrueba.data;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace WebAppPrueba.Controllers
 {
@@ -19,13 +19,13 @@ namespace WebAppPrueba.Controllers
             _context = context;
         }
 
-        // GET: Clients
+      
         public async Task<IActionResult> Index()
         {
               return View(await _context.Client.ToListAsync());
         }
 
-        // GET: Clients/Details/5
+        
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.Client == null)
@@ -43,15 +43,12 @@ namespace WebAppPrueba.Controllers
             return View(client);
         }
 
-        // GET: Clients/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Clients/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+      
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,IdClient,Nombres,Apellidos,Departamento,Pais,FechaIngreso")] Client client)
@@ -65,7 +62,7 @@ namespace WebAppPrueba.Controllers
             return View(client);
         }
 
-        // GET: Clients/Edit/5
+        
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.Client == null)
@@ -81,9 +78,7 @@ namespace WebAppPrueba.Controllers
             return View(client);
         }
 
-        // POST: Clients/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+       
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,IdClient,Nombres,Apellidos,Departamento,Pais,FechaIngreso")] Client client)
@@ -116,7 +111,7 @@ namespace WebAppPrueba.Controllers
             return View(client);
         }
 
-        // GET: Clients/Delete/5
+        
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.Client == null)
@@ -134,7 +129,7 @@ namespace WebAppPrueba.Controllers
             return View(client);
         }
 
-        // POST: Clients/Delete/5
+        
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

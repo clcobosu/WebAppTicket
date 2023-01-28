@@ -1,12 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
+using WebAppPrueba.data;
+using WebAppPrueba.Models;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
-using WebAppPrueba.Models;
-using WebAppPrueba.data;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace WebAppPrueba.Controllers
 {
@@ -19,13 +19,13 @@ namespace WebAppPrueba.Controllers
             _context = context;
         }
 
-        // GET: Operarios
+ 
         public async Task<IActionResult> Index()
         {
               return View(await _context.Operario.ToListAsync());
         }
 
-        // GET: Operarios/Details/5
+       
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.Operario == null)
@@ -43,15 +43,13 @@ namespace WebAppPrueba.Controllers
             return View(operario);
         }
 
-        // GET: Operarios/Create
+ 
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Operarios/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+      
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,IdOperario,Nombres,Apellidos,Departamento,FechaIngreso")] Operario operario)
@@ -65,7 +63,7 @@ namespace WebAppPrueba.Controllers
             return View(operario);
         }
 
-        // GET: Operarios/Edit/5
+
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.Operario == null)
@@ -81,9 +79,7 @@ namespace WebAppPrueba.Controllers
             return View(operario);
         }
 
-        // POST: Operarios/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+      
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,IdOperario,Nombres,Apellidos,Departamento,FechaIngreso")] Operario operario)
@@ -116,7 +112,7 @@ namespace WebAppPrueba.Controllers
             return View(operario);
         }
 
-        // GET: Operarios/Delete/5
+        
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.Operario == null)
@@ -134,7 +130,7 @@ namespace WebAppPrueba.Controllers
             return View(operario);
         }
 
-        // POST: Operarios/Delete/5
+        
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

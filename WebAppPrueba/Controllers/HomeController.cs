@@ -1,8 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using WebAppPrueba.Models;
+using Microsoft.AspNetCore.Mvc;
 
-namespace WebAppPrueba.Controllers
+namespace WebApplication1.Controllers
 {
     public class HomeController : Controller
     {

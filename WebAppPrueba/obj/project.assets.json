@@ -10482,11 +10482,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Desarrollo\\WebAppPrueba\\WebAppPrueba\\WebAppPrueba.csproj",
+      "projectUniqueName": "D:\\Desarrollo\\WebAppPrueba\\WebAppTicket\\WebAppPrueba\\WebAppPrueba.csproj",
       "projectName": "WebAppPrueba",
-      "projectPath": "D:\\Desarrollo\\WebAppPrueba\\WebAppPrueba\\WebAppPrueba.csproj",
+      "projectPath": "D:\\Desarrollo\\WebAppPrueba\\WebAppTicket\\WebAppPrueba\\WebAppPrueba.csproj",
       "packagesPath": "C:\\Users\\Carlos\\.nuget\\packages\\",
-      "outputPath": "D:\\Desarrollo\\WebAppPrueba\\WebAppPrueba\\obj\\",
+      "outputPath": "D:\\Desarrollo\\WebAppPrueba\\WebAppTicket\\WebAppPrueba\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
