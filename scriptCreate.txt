@@ -1,0 +1,81 @@
+CREATE DATABASE [TestApp]
+ CONTAINMENT = NONE
+ ON  PRIMARY 
+( NAME = N'TestApp', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\DATA\TestApp.mdf' , SIZE = 8192KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB )
+ LOG ON 
+( NAME = N'TestApp_log', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\DATA\TestApp_log.ldf' , SIZE = 8192KB , MAXSIZE = 2048GB , FILEGROWTH = 65536KB )
+ WITH CATALOG_COLLATION = DATABASE_DEFAULT
+GO
+
+USE [TestApp]
+GO
+
+/****** Object:  Table [dbo].[Operario]    Script Date: 27/01/2023 7:19:55 p. m. ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Operario](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[idOperario] [varchar](20) NOT NULL,
+	[Nombres] [varchar](75) NOT NULL,
+	[Apellidos] [varchar](75) NOT NULL,
+	[Departamento] [varchar](50) NOT NULL,
+	[FechaIngreso] [datetime] NOT NULL,
+ CONSTRAINT [PK_Operario] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+USE [TestApp]
+GO
+
+/****** Object:  Table [dbo].[Ticket]    Script Date: 27/01/2023 7:19:45 p. m. ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Ticket](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[idClient] [varchar](75) NOT NULL,
+	[Operador] [varchar](20) NOT NULL,
+	[incidencia] [varchar](max) NOT NULL,
+	[FechaIngreso] [datetime] NOT NULL,
+ CONSTRAINT [PK_Incidencias] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+USE [TestApp]
+GO
+
+/****** Object:  Table [dbo].[Client]    Script Date: 27/01/2023 7:19:32 p. m. ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Client](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[idClient] [varchar](75) NOT NULL,
+	[Nombres] [varchar](75) NOT NULL,
+	[Apellidos] [varchar](75) NOT NULL,
+	[Departamento] [varchar](50) NOT NULL,
+	[Pais] [varchar](50) NOT NULL,
+	[FechaIngreso] [datetime] NOT NULL,
+ CONSTRAINT [PK_Client] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
